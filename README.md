@@ -1,2 +1,2 @@
-# lockfile_pid
+# lockfile-pid
 Lock file api for node
