@@ -1,0 +1,22 @@
+{
+  "name": "lockfile_pid",
+  "version": "1.0.0",
+  "description": "Lock file api for node",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Andersbakken/lockfile_pid.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Andersbakken/lockfile_pid/issues"
+  },
+  "homepage": "https://github.com/Andersbakken/lockfile_pid#readme",
+  "dependencies": {
+    "find-process": "^1.1.0"
+  }
+}
