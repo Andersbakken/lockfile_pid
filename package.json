@@ -1,5 +1,5 @@
 {
-  "name": "lockfile_pid",
+  "name": "lockfile-pid",
   "version": "1.0.0",
   "description": "Lock file api for node",
   "main": "index.js",
