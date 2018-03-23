@@ -1,6 +1,6 @@
 {
   "name": "lockfile-pid",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "Lock file api for node",
   "main": "index.js",
   "scripts": {
