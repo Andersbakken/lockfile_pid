@@ -18,6 +18,6 @@
   "homepage": "https://github.com/Andersbakken/lockfile_pid#readme",
   "dependencies": {
     "find-process": "^1.1.0",
-    "rmdir": "^1.2.0"
+    "fs-ext": "^1.0.0"
   }
 }
