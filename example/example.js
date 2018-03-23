@@ -2,7 +2,7 @@
 
 const lockfile = require('../lib/lockfile-pid');
 
-lockfile.lock("/tmp/lockfile-pid_test", {wait: 10000, stale: 1000000}).then(run).catch((err) => {
+lockfile.lock("/tmp/lockfile-pid_test", {wait: 4000, stale: 1000000}).then(run).catch((err) => {
     console.log("Couldn't lock", err);
     process.exit(1);
 });
