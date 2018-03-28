@@ -17,7 +17,6 @@
   },
   "homepage": "https://github.com/Andersbakken/lockfile_pid#readme",
   "dependencies": {
-    "find-process": "^1.1.0",
-    "fs-ext": "^1.0.0"
+    "find-process": "^1.1.0"
   }
 }

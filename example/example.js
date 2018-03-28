@@ -1,21 +1,29 @@
 #!/usr/bin/env node
 
 const lockfile = require('../lib/lockfile-pid');
+const fs = require('fs');
 
-lockfile.lock("/tmp/lockfile-pid_test", {wait: 4000, stale: 1000000}).then(run).catch((err) => {
-    console.log("Couldn't lock", err);
+var count = 10;
+function go() {
+    lockfile.lock("/tmp/lockfile-pid_test", {wait: 100}).then((unlock) => {
+        console.log(count);
+        fs.writeFileSync("/tmp/lockfile-pid_test.data", count--);
+        setTimeout(() => {
+            unlock();
+            if (!count)
+                process.exit();
+            setTimeout(go, 500);
+        }, 500);
+    }, (err) => {
+        console.log("Couldn't lock", err);
+        setTimeout(go, 1000);
+    });
+};
+go();
+
+process.on('unhandledRejection', (reason, p) => {
+    console.error(reason, 'Unhandled Rejection at Promise', p);
+}).on('uncaughtException', err => {
+    console.error(err, 'Uncaught Exception thrown');
     process.exit(1);
 });
-function run(unlock)
-{
-    var count = 10;
-    setInterval(() => {
-        console.log(count--);
-        if(!count) {
-            lockfile.unlock("/tmp/lockfile-pid_test");
-        } else if (count == -3) {
-            process.exit();
-        }
-    }, 1000);
-}
-
